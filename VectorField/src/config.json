@@ -1,0 +1,21 @@
+{
+  "density": 1.0,
+  "dimensions": 3,
+  "grid_range": [
+    {
+      "dimension": "X",
+      "max": 5.0,
+      "min": -5.0
+    },
+    {
+      "dimension": "Y",
+      "min": -5.0,
+      "max": 5.0
+    },
+    {
+      "dimension": "Z",
+      "min": -5.0,
+      "max": 5.0
+    }
+  ]
+}

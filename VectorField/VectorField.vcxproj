@@ -149,23 +149,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\cleanup.cpp" />
-    <ClCompile Include="src\equations.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\vertex.cpp" />
-    <ClCompile Include="src_refactor\Application.cpp" />
-    <ClCompile Include="src_refactor\Initializer.cpp" />
-    <ClCompile Include="src_refactor\pch.cpp" />
+    <ClCompile Include="src_old\cleanup.cpp" />
+    <ClCompile Include="src_old\equations.cpp" />
+    <ClCompile Include="src_old\main.cpp" />
+    <ClCompile Include="src_old\vertex.cpp" />
+    <ClCompile Include="src\Application.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\Initializer.cpp" />
+    <ClCompile Include="src\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\cleanup.h" />
-    <ClInclude Include="src\equations.h" />
-    <ClInclude Include="src\vertex.h" />
-    <ClInclude Include="src_refactor\Initializer.h" />
-    <ClInclude Include="src_refactor\pch.h" />
+    <ClInclude Include="src_old\cleanup.h" />
+    <ClInclude Include="src_old\equations.h" />
+    <ClInclude Include="src_old\vertex.h" />
+    <ClInclude Include="src\Initializer.h" />
+    <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="src_refactor\config.json" />
+    <Xml Include="src\config.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
