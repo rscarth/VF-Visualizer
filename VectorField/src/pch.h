@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
+#include <utility>
 
 //OpenGL GLFW
 #include <GLFW/glfw3.h>

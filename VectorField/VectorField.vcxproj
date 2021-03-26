@@ -149,10 +149,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src_old\cleanup.cpp" />
-    <ClCompile Include="src_old\equations.cpp" />
-    <ClCompile Include="src_old\main.cpp" />
-    <ClCompile Include="src_old\vertex.cpp" />
     <ClCompile Include="src\Application.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </ExcludedFromBuild>
@@ -163,9 +159,6 @@
     <ClCompile Include="src\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src_old\cleanup.h" />
-    <ClInclude Include="src_old\equations.h" />
-    <ClInclude Include="src_old\vertex.h" />
     <ClInclude Include="src\Initializer.h" />
     <ClInclude Include="src\pch.h" />
   </ItemGroup>
@@ -177,7 +170,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties src_3refactor_4config_1json__JsonSchema="https://beaujs.com/schema.json" />
+      <UserProperties />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
