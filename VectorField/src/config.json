@@ -4,8 +4,8 @@
   "grid_range": [
     {
       "dimension": "X",
-      "min": 5.0,
-      "max": -5.0
+      "min": -5.0,
+      "max": 5.0
     },
     {
       "dimension": "Y",
