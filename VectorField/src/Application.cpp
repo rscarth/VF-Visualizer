@@ -1,9 +1,8 @@
 #include "pch.h"
-#include "Initializer.h"
 
 int main(void) {
-	//Config File
 	const std::string cfg_path = "src/config.json";
+	config::Config cfg;
 	std::ifstream cfg_file(cfg_path);
 	int error = 0;
 
@@ -15,10 +14,13 @@ int main(void) {
 	}
 	else {
 		std::cout << "Config file " << cfg_path << " found." << std::endl;
-		vectorfield::initalizer::initalize(cfg_file, error);
 
-		//End program if error in config
-		if(error < 0) return error;
+		config::LoadConfig(cfg_file, cfg, error);
+		parser::parse(cfg.function, cfg.dimensions, error);
+		if (error < 0) return error;
+		std::cout << cfg.density;
+
+		std::cout << "Config loaded successfully." << std::endl;
 	}
 
 	return 0;

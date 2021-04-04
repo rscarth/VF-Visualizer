@@ -12,3 +12,8 @@
 
 //Nlohman JSON
 #include <nlohmann/json.hpp>
+
+//Project inclusions
+#include "FunctionParser.hpp"
+#include "Config.hpp"
+#include "FunctionParser.hpp"

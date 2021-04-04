@@ -155,11 +155,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="src\Initializer.cpp" />
+    <ClCompile Include="src\Config.cpp" />
+    <ClCompile Include="src\Error.cpp" />
     <ClCompile Include="src\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Initializer.h" />
+    <ClInclude Include="src\Config.hpp" />
+    <ClInclude Include="src\Error.hpp" />
     <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>
