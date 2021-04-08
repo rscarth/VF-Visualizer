@@ -10,7 +10,7 @@ void LoadConfig(std::ifstream& cfg_file, Config& cfg, int& err) {
 		//Check if density > 0
 		//Insert density to struct cfg if pass
 		if (!error::checkPositive(json_cfg["density"], "Density value must be greater than 0.0")) {
-			err = -200;
+			err = -110;
 		}
 		else {
 			cfg.density = (float)json_cfg["density"];
@@ -19,7 +19,7 @@ void LoadConfig(std::ifstream& cfg_file, Config& cfg, int& err) {
 		//Check if dimensions = 2 or 3
 		//Insert dimensions to struct cfg if pass
 		if (!error::checkDimensions(json_cfg["dimensions"], "Dimensions must be set to 2 or 3")) {
-			err = -300;
+			err = -120;
 		}
 		else {
 			cfg.dimensions = (int)json_cfg["dimensions"];
@@ -31,7 +31,7 @@ void LoadConfig(std::ifstream& cfg_file, Config& cfg, int& err) {
 			if (!error::checkRange(json_cfg["grid_range"][i]["min"], json_cfg["grid_range"][i]["max"],
 				"Min value greater or equal to max value")) {
 				
-				err = -400;
+				err = -130;
 			}
 			else {
 				cfg.mm_range.push_back({ (float)json_cfg["grid_range"][i]["min"], (float)json_cfg["grid_range"][i]["max"] });

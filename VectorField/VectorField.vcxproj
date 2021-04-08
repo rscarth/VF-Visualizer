@@ -157,11 +157,13 @@
     </ClCompile>
     <ClCompile Include="src\Config.cpp" />
     <ClCompile Include="src\Error.cpp" />
+    <ClCompile Include="src\FunctionParser.cpp" />
     <ClCompile Include="src\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Config.hpp" />
     <ClInclude Include="src\Error.hpp" />
+    <ClInclude Include="src\FunctionParser.hpp" />
     <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>

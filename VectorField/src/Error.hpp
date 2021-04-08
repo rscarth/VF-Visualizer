@@ -5,6 +5,24 @@
 #define LOGGING true
 
 namespace error {
+	void printPointer(const int& p);
+
+	//Print error
+	//If p has value print error pointer
+	inline void printError(const std::string msg, const int p = 0) {
+		if (LOGGING) {
+			if (p > 0) {
+				printPointer(p);
+			}
+			std::cout << msg << std::endl;
+		}
+	}
+
+	//Print error pointer
+	inline void printPointer(const int& p) {
+		if (LOGGING) std::cout << std::string(p, ' ') << "^" << std::endl;
+	}
+
 	//General Utility Error Checking
 	//
 	//Takes two numbers as input and returns error if min > max
@@ -27,7 +45,7 @@ namespace error {
 		return true;
 	}
 
-	//Config Loading Error Checking
+	//Config Loading Error Checking - Config.cpp/Config.hpp
 	//
 	//Takes a int as input and returns error if overflow exists
 	template <typename T>
@@ -47,4 +65,8 @@ namespace error {
 		if (LOGGING) { std::cout << msg << std::endl; };
 		return false;
 	}
+
+	//Parser Error Checking - FunctionParser.cpp/FunctionParser.hpp
+	//
+	//
 }

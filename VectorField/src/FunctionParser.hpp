@@ -1,9 +1,9 @@
 #pragma once
 
-#include <stack>
-
 #include "pch.h"
 
 namespace parser {
-	int* parse(std::string& s, const int& d, int& err);
+	void Parse(const std::string& s, const int& d, std::unordered_map<std::string, int>& vars, std::string* funcs, int& err);
+	void Interpreter(const int& d, std::unordered_map<std::string, int>& vars, std::string* funcs[], int& err);
+	void ParserHandler(std::string& s, const int& d, int& err);
 }

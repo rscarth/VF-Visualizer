@@ -1,7 +1,7 @@
 {
   "density": 1.0,
   "dimensions": 3,
-  "function": "f(x,y,z) = <1,1,z>",
+  "function": "f(x,y,z) = <2,1/z,z>",
   "grid_range": [
     {
       "dimension": "x",

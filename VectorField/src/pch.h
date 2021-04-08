@@ -6,6 +6,9 @@
 #include <string>
 #include <fstream>
 #include <utility>
+#include <map>
+#include <unordered_map>
+#include <array>
 
 //OpenGL GLFW
 #include <GLFW/glfw3.h>
