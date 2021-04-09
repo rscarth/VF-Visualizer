@@ -11,5 +11,5 @@ namespace config {
 	};
 
 
-	void LoadConfig(std::ifstream& cfg_file, Config& cfg, int& err);
+	void LoadConfig(std::ifstream& cfg_file, Config& cfg);
 }

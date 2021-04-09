@@ -1,10 +1,10 @@
 #include "pch.h"
+#include "Error.hpp"
 
 int main(void) {
 	const std::string cfg_path = "src/config.json";
 	config::Config cfg;
 	std::ifstream cfg_file(cfg_path);
-	int error = 0;
 
 	//Check if config file exists
 	if (!cfg_file) {
@@ -15,11 +15,10 @@ int main(void) {
 	else {
 		std::cout << "Config file " << cfg_path << " found." << std::endl;
 
-		config::LoadConfig(cfg_file, cfg, error);
-		if (error < 0) return error;
-		std::cout << cfg.function << std::endl;
-		parser::ParserHandler(cfg.function, cfg.dimensions, error);
-		if (error < 0) return error;
+		config::LoadConfig(cfg_file, cfg);
+		if (error::err < 0) return error::err;
+		parser::ParserHandler(cfg.function, cfg.dimensions);
+		if (error::err < 0) return error::err;
 		std::cout << "Config loaded successfully." << std::endl;
 	}
 

@@ -5,14 +5,19 @@
 #define LOGGING true
 
 namespace error {
+	extern int err;
+
 	void printPointer(const int& p);
 
 	//Print error
 	//If p has value print error pointer
-	inline void printError(const std::string msg, const int p = 0) {
+	inline void printError(const std::string msg, int thr = 0, int p = 0) {
 		if (LOGGING) {
 			if (p > 0) {
 				printPointer(p);
+			}
+			if (thr != 0) {
+				err = thr;
 			}
 			std::cout << msg << std::endl;
 		}
@@ -30,6 +35,7 @@ namespace error {
 	bool checkRange(const T& min, const T& max, const std::string msg) {
 		if (min >= max) {
 			if (LOGGING) { std::cout << msg << std::endl; };
+			err = -100;
 			return false;
 		}
 		return true;
@@ -40,6 +46,7 @@ namespace error {
 	bool checkPositive(const T& n, const std::string msg) {
 		if (n <= 0.0) {
 			if (LOGGING) { std::cout << msg << std::endl; };
+			err = -110;
 			return false;
 		}
 		return true;
@@ -52,6 +59,7 @@ namespace error {
 	bool checkOverflow(const T& n, const int max_size, const std::string msg) {
 		if (n == 0 || n >= max_size) {
 			if (LOGGING) { std::cout << msg << std::endl; };
+			err = -200;
 			return false;
 		}
 		return true;
@@ -62,7 +70,7 @@ namespace error {
 	bool checkDimensions(const T& n, const std::string msg) {
 		if (n == 2 || n == 3) { return true; }
 
-		if (LOGGING) { std::cout << msg << std::endl; };
+		if (LOGGING) { std::cout << msg << std::endl; err = -210; };
 		return false;
 	}
 
